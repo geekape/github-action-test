@@ -2,12 +2,10 @@
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
     123
-    <Todo />
   </div>
 </template>
 
 <script>
-import Todo from './components/Todo.vue'
 
 export default {
   name: 'App',
