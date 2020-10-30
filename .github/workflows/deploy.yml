@@ -24,12 +24,12 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./dist
-    - name: deploy file to server
-      uses: wlixcc/SFTP-Deploy-Action@v1.0 
-      with:  
-        username: 'root'   #ssh user name
-        port: 21
-        server: '${{ secrets.HOST }}' #引用之前创建好的secret
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} #引用之前创建好的secret
-        local_path: './build/*'  # 对应我们项目build的文件夹路径
-        remote_path: '/www/wwwroot/zcbing.cn'
+    - name: Deploy
+      uses: easingthemes/ssh-deploy@v2.0.7
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SOURCE: "dist/"
+        REMOTE_HOST: ${{ secrets.HOST }}
+        REMOTE_USER: "root"
+        REMOTE_PORT: "22"
+        TARGET: "/www/wwwroot/zcbing.cn"
