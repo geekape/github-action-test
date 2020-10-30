@@ -31,5 +31,4 @@ jobs:
         SOURCE: "dist/"
         REMOTE_HOST: ${{ secrets.HOST }}
         REMOTE_USER: "root"
-        REMOTE_PORT: ${{ secrets.PORT }}
         TARGET: "/www/wwwroot/zcbing.cn"
