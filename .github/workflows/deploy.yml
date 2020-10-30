@@ -24,3 +24,13 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./dist
+    - name: Deploy
+      uses: garygrossgarten/github-action-scp@release
+      with:
+          local: nebula-website
+          remote: /www/wwwroot/zcbing.cn
+          host: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: root
+          password: ${{ secrets.PASSWORD }}
+          concurrency: 20
