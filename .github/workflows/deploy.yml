@@ -24,8 +24,6 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./dist
-    - name: Deploy
-      uses: garygrossgarten/github-action-scp@release
     - name: deploy file to server
       uses: wlixcc/SFTP-Deploy-Action@v1.0 
       with:  
