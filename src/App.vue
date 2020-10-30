@@ -1,7 +1,7 @@
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
-    123
+    <h1>github action test is ok</h1>
   </div>
 </template>
 
@@ -10,7 +10,6 @@
 export default {
   name: 'App',
   components: {
-    Todo
   }
 }
 </script>
