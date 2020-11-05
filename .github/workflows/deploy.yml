@@ -39,5 +39,3 @@ jobs:
         SOURCE: dist
         # Target directory
         TARGET: /www/wwwroot/root/
-        # Arguments to pass to rsync
-        ARGS: 123
