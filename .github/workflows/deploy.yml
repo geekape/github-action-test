@@ -24,3 +24,20 @@ jobs:
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./dist
+    - name: ssh deploy
+      uses: easingthemes/ssh-deploy@v2.1.5
+      with:
+        # Private Key
+        SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+        # Remote host
+        REMOTE_HOST: ${{secrets.HOST}}
+        # Remote user
+        REMOTE_USER: ${{secrets.USER}}
+        # Remote port
+        REMOTE_PORT: ${{secrets.PORT}}
+        # Source directory
+        SOURCE: ./dist
+        # Target directory
+        TARGET: /www/wwwroot/root/
+        # Arguments to pass to rsync
+        ARGS: 123
